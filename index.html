@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Meta Tags for Social Media -->
+    <meta property="og:title" content="Forever Friends: Oluwatomisin's Graduation Journey">
+    <meta property="og:description" content="Celebrating a friendship that has weathered every storm and celebrated every victory. From study sessions to graduation day - this is our story.">
+    <meta property="og:image" content="./asset/Image-2.jpeg">
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Forever Friends: Oluwatomisin's University Journey">
+    <meta name="twitter:description" content="Celebrating a friendship that has weathered every storm and celebrated every victory. From study sessions to Sign Out day - this is our story.">
+    <meta name="twitter:image" content="./asset/Image-2.jpeg">
+    
+    <!-- Page Description -->
+    <meta name="description" content="A heartfelt tribute to friendship and academic achievement. Join us in celebrating Oluwatomisin's graduation journey filled with memories, laughter, and unbreakable bonds.">
+    
+    <!-- Favicon - Gold Graduation Cap -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+    
+    <title>Forever Friends</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a237e;
+            --secondary-color: #ffd700;
+            --accent-color: #f5f5f5;
+            --text-color: #fff;
+            --gradient-start: #1a237e;
+            --gradient-end: #0d47a1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            transition: opacity 0.5s ease;
+        }
+
+        body.fade-out {
+            opacity: 0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .loading-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .loading-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.3s forwards;
+        }
+
+        .loading-animation {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+        }
+
+        .circle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 4px solid transparent;
+            border-radius: 50%;
+            animation: rotate 2s linear infinite;
+        }
+
+        .circle:nth-child(1) {
+            border-top-color: var(--secondary-color);
+            animation-delay: 0s;
+        }
+
+        .circle:nth-child(2) {
+            border-right-color: var(--secondary-color);
+            animation-delay: 0.5s;
+        }
+
+        .circle:nth-child(3) {
+            border-bottom-color: var(--secondary-color);
+            animation-delay: 1s;
+        }
+
+        .circle:nth-child(4) {
+            border-left-color: var(--secondary-color);
+            animation-delay: 1.5s;
+        }
+
+        .inner-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .inner-circle i {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+            opacity: 0.3;
+        }
+
+        .particle:nth-child(1) { left: 10%; animation-duration: 20s; }
+        .particle:nth-child(2) { left: 20%; animation-duration: 25s; animation-delay: 2s; }
+        .particle:nth-child(3) { left: 30%; animation-duration: 18s; animation-delay: 4s; }
+        .particle:nth-child(4) { left: 40%; animation-duration: 22s; animation-delay: 6s; }
+        .particle:nth-child(5) { left: 50%; animation-duration: 19s; animation-delay: 8s; }
+        .particle:nth-child(6) { left: 60%; animation-duration: 21s; animation-delay: 10s; }
+        .particle:nth-child(7) { left: 70%; animation-duration: 23s; animation-delay: 12s; }
+        .particle:nth-child(8) { left: 80%; animation-duration: 17s; animation-delay: 14s; }
+        .particle:nth-child(9) { left: 90%; animation-duration: 24s; animation-delay: 16s; }
+
+        .progress-bar {
+            width: 200px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            margin: 2rem auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            background: var(--secondary-color);
+            transition: width 5s linear;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100px) scale(1);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .loading-title {
+                font-size: 2rem;
+            }
+            .loading-subtitle {
+                font-size: 1rem;
+            }
+            .loading-animation {
+                width: 120px;
+                height: 120px;
+            }
+            .inner-circle {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    
+    <div class="container">
+        <h1 class="loading-title">Preparing Something Special...</h1>
+        <p class="loading-subtitle">Loading memories and moments for Oluwatomisin Morenikeji</p>
+        
+        <div class="loading-animation">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="inner-circle">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-bar-fill"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const progressBarFill = document.querySelector('.progress-bar-fill');
+            const body = document.body;
+            
+            // Start the progress bar animation
+            requestAnimationFrame(() => {
+                progressBarFill.style.width = '100%';
+            });
+            
+            // Wait for the progress bar to complete (5 seconds)
+            setTimeout(() => {
+                // Add fade-out animation to the body
+                body.classList.add('fade-out');
+                
+                // Wait for fade-out animation to complete (0.5 seconds)
+                setTimeout(() => {
+                    // Redirect to main.html
+                    window.location.href = 'main.html';
+                }, 500);
+            }, 5000);
+        });
+    </script>
+</body>
+</html> 
