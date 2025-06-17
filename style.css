@@ -862,12 +862,25 @@ section {
    VIDEO SECTION
    ======================================== */
 .video-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat fixed;
+    position: relative;
+    overflow: hidden;
+}
+
+.video-section .container {
+    position: relative;
+    z-index: 3;
+}
+
+.video-section .section-header {
+    color: white;
 }
 
 .video-badge {
-    background: rgba(255, 255, 255, 0.1) !important;
+    background: rgba(255, 255, 255, 0.2) !important;
     color: white !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .video-title {
@@ -875,7 +888,7 @@ section {
 }
 
 .video-description {
-    color: rgba(255, 255, 255, 0.8) !important;
+    color: rgba(255, 255, 255, 0.9) !important;
 }
 
 .video-grid {
