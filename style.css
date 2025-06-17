@@ -651,10 +651,12 @@ section {
         align-items: center;
     }
     .memory-card {
-        max-width: 98vw;
-        min-width: 95vw;
+        max-width: 100%;
         width: 100%;
         margin: 0 auto;
+    }
+    .memory-card:nth-child(2) {
+        display: none;
     }
     .carousel-control-prev, .carousel-control-next {
         width: 50px;
@@ -690,10 +692,12 @@ section {
         align-items: center;
     }
     .memory-card {
-        max-width: 99vw;
-        min-width: 98vw;
+        max-width: 100%;
         width: 100%;
         margin: 0 auto;
+    }
+    .memory-card:nth-child(2) {
+        display: none;
     }
     .carousel-control-prev, .carousel-control-next {
         width: 45px;
@@ -717,23 +721,25 @@ section {
 
 @media (max-width: 375px) {
     .memory-card {
-        max-width: 99vw;
-        min-width: 98vw;
+        max-width: 100%;
+        width: 100%;
         margin: 0 auto;
-        flex: 0 0 auto;
+    }
+    .memory-card:nth-child(2) {
+        display: none;
     }
     .carousel-control-prev, .carousel-control-next {
         width: 40px;
         height: 40px;
         background: rgba(255, 255, 255, 0.8);
         border-radius: 5px;
-        border: 1px solid rgba(255, 107, 107, 0.2);
+        border: 2px solid rgba(255, 107, 107, 0.2);
     }
     .carousel-control-prev {
-        left: 6px;
+        left: 5px;
     }
     .carousel-control-next {
-        right: 6px;
+        right: 5px;
     }
     .carousel-control-prev-icon, .carousel-control-next-icon {
         width: 1.2rem;
@@ -744,10 +750,12 @@ section {
 
 @media (max-width: 320px) {
     .memory-card {
-        max-width: 99vw;
-        min-width: 99vw;
+        max-width: 100%;
+        width: 100%;
         margin: 0 auto;
-        flex: 0 0 auto;
+    }
+    .memory-card:nth-child(2) {
+        display: none;
     }
     .carousel-control-prev, .carousel-control-next {
         width: 35px;
@@ -757,10 +765,10 @@ section {
         border: 1px solid rgba(255, 107, 107, 0.15);
     }
     .carousel-control-prev {
-        left: 5px;
+        left: 3px;
     }
     .carousel-control-next {
-        right: 5px;
+        right: 3px;
     }
     .carousel-control-prev-icon, .carousel-control-next-icon {
         width: 1rem;
